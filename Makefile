@@ -10,7 +10,7 @@ MANAGE_PY = python manage.py
 
 .PHONY: app
 app:
-	${DC} -f ${APP_FILE} -f ${STORAGES_FILE} ${ENV} up -d
+	${DC} -f ${APP_FILE} -f ${STORAGES_FILE} ${ENV} up --build -d
 
 .PHONY: app-down
 app-down:
@@ -39,6 +39,10 @@ postgres:
 .PHONY: migrate
 migrate:
 	${EXEC} ${APP_CONTAINER} ${MANAGE_PY} migrate
+
+.PHONY: migrations
+migrations:
+	${EXEC} ${APP_CONTAINER} ${MANAGE_PY} makemigrations
 
 .PHONY: superuser
 superuser:
