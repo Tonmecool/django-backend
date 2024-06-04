@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
                 ('title', models.CharField(max_length=255, verbose_name='Название товара')),
                 ('description', models.TextField(blank=True, verbose_name='Описание товара')),
-                ('is_active', models.BooleanField(default=True, verbose_name='Видимость товара в каталоге')),
+                ('is_visible', models.BooleanField(default=True, verbose_name='Видимость товара в каталоге')),
             ],
             options={
                 'verbose_name': 'Товар',
